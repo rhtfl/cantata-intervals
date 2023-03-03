@@ -1,0 +1,169 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Проверка интервалов</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    
+
+    
+    <!-- Favicons -->
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .intervalText {
+        padding: 0px 14px;
+        height: 48px;
+        border: 1px solid rgba(48, 48, 48, 0.12);
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        margin-right: 6px;
+        flex:0 0 auto;
+        transition: .2s;
+      }
+
+      .intervalText:hover {
+        border: 1px solid rgba(48, 48, 48, 0.52);
+        transition: .2s;
+      }
+
+      .sectora {
+        display: flex;
+      }
+
+      .tab-content {
+        transition: .4s;
+      }
+
+      .card {
+        transition: .2s;
+      }
+
+      .card:hover {
+        /* margin-top: -4px; */
+        transition: .2s;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+      }
+
+      .nav-link {
+        color:rgba(48, 48, 48, 1);
+        font-weight: 500;
+        font-size: 20px;
+      }
+      .nav-link:hover {
+        color:rgba(48, 48, 48, .8);
+      }
+
+      .nav-link.active {
+        background-color: rgb(71, 54, 40)!important;
+        color: #fff;
+      }
+      
+    </style>
+
+    
+  </head>
+  <body>
+    
+<main>
+  <div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <svg fill="none" height="40.333px" viewBox="0 0 237 40.333" width="237px" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M13.383,30.685l2.983-21.465l-3.076-0.502 c-0.656-0.092-0.884-0.931-0.884-1.85c0-1.625,0.558-3.102,1.445-3.102h13.093c0.516,0,0.75,0.604,0.75,1.34 c0,1.573-0.607,3.241-1.491,3.562l-2.147,0.552l-1.021,7.45h2.846l7.131-7.45l-1.629-0.502c-0.565-0.237-0.842-1.16-0.842-2.179 c0-1.336,0.509-2.772,1.444-2.772H44.71c0.696,0,0.977,0.647,0.977,1.477c0,1.387-0.792,3.29-1.72,3.475l-2.619,0.502 l-9.779,9.809l6.102,11.656l3.869,0.508c0.698,0.092,0.931,0.973,0.931,1.945c0,1.382-0.559,3.007-1.396,3.007h-9.324 l-6.758-13.742h-2.796l-1.116,8.282l2.607,0.508c0.656,0.137,0.885,0.927,0.885,1.798c0,1.58-0.465,3.153-1.351,3.153H9.846 C9.238,36.145,9,35.589,9,34.8c0-1.437,0.655-3.47,1.682-3.699L13.383,30.685z" fill="#473628" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M66.478,25.397l-1.6-7.981h-0.175l-3.345,7.981H66.478 L66.478,25.397z M67.558,32.065l-0.453-2.414H59.62l-1.116,2.414l2.02,0.382c0.491,0.136,0.662,0.69,0.662,1.348 c0,1.176-0.349,2.35-1.011,2.35h-9.887c-0.454,0-0.629-0.417-0.629-1.009c0-1.099,0.488-2.584,1.252-2.758l2.02-0.313 l7.593-15.821l-2.263-0.346c-0.487-0.073-0.698-0.767-0.698-1.556c0-1.073,0.418-2.382,1.079-2.382h10.546l4.394,20.105 l2.259,0.382c0.492,0.104,0.699,0.69,0.699,1.348c0,1.205-0.418,2.35-1.041,2.35H65.193c-0.49,0-0.629-0.417-0.629-0.972 c0-1.21,0.447-2.518,1.284-2.725L67.558,32.065z" fill="#473628" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M85.837,32.065l2.227-16.034l-2.297-0.376 c-0.484-0.065-0.658-0.691-0.658-1.384c0-1.211,0.414-2.311,1.078-2.311h10.095c0.386,0,0.563,0.449,0.563,1.007 c0,1.17-0.417,2.447-1.295,2.688l-1.739,0.376l-0.768,5.425h8.608l0.759-5.425l-1.981-0.376 c-0.485-0.106-0.663-0.691-0.663-1.347c0-1.249,0.419-2.348,1.122-2.348h9.954c0.388,0,0.556,0.449,0.556,1.067 c0,1.142-0.416,2.454-1.284,2.627l-1.954,0.376l-2.229,16.034l2.264,0.382c0.491,0.104,0.692,0.69,0.692,1.348 c0,1.205-0.417,2.35-1.044,2.35H97.82c-0.491,0-0.632-0.417-0.632-0.972c0-1.21,0.455-2.518,1.288-2.725l1.708-0.382l0.87-6.324 h-8.595l-0.874,6.324l1.952,0.382c0.49,0.136,0.663,0.69,0.663,1.348c0,1.176-0.356,2.35-1.016,2.35h-9.992 c-0.452,0-0.628-0.417-0.628-1.009c0-1.099,0.491-2.584,1.25-2.758L85.837,32.065z" fill="#473628" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M123.937,32.065l2.223-15.893h-3.761l-1.078,3.905 c-0.174,0.518-1.322,0.932-2.334,0.932c-0.837,0-1.562-0.244-1.638-0.798l1.155-8.251h22.215l-1.183,8.251 c-0.104,0.526-0.911,0.759-1.78,0.759c-0.976,0-2.019-0.309-2.12-0.893l0.033-3.905h-3.756l-2.23,15.893l2.398,0.382 c0.486,0.069,0.663,0.69,0.663,1.348c0,1.176-0.386,2.35-1.012,2.35h-10.584c-0.415,0-0.592-0.417-0.592-1.009 c0-1.099,0.453-2.62,1.253-2.758L123.937,32.065z" fill="#473628" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M159.205,25.397l-1.598-7.981h-0.177l-3.341,7.981H159.205 L159.205,25.397z M160.287,32.065l-0.447-2.414h-7.489l-1.124,2.414l2.023,0.382c0.493,0.136,0.661,0.69,0.661,1.348 c0,1.176-0.347,2.35-1.004,2.35h-9.893c-0.453,0-0.626-0.417-0.626-1.009c0-1.099,0.491-2.584,1.254-2.758l2.018-0.313 l7.59-15.821l-2.262-0.346c-0.483-0.073-0.696-0.767-0.696-1.556c0-1.073,0.42-2.382,1.082-2.382h10.547l4.391,20.105 l2.262,0.382c0.488,0.104,0.697,0.69,0.697,1.348c0,1.205-0.42,2.35-1.043,2.35H157.92c-0.49,0-0.628-0.417-0.628-0.972 c0-1.21,0.451-2.518,1.29-2.725L160.287,32.065z" fill="#473628" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M180.871,32.065l2.223-15.893h-3.764l-1.074,3.905 c-0.177,0.518-1.324,0.932-2.336,0.932c-0.838,0-1.569-0.244-1.639-0.798l1.153-8.251h22.216l-1.18,8.251 c-0.111,0.526-0.908,0.759-1.783,0.759c-0.967,0-2.014-0.309-2.121-0.893l0.037-3.905h-3.764l-2.225,15.893l2.399,0.382 c0.484,0.069,0.659,0.69,0.659,1.348c0.005,1.176-0.386,2.35-1.008,2.35h-10.587c-0.418,0-0.589-0.417-0.589-1.009 c0-1.099,0.449-2.62,1.252-2.758L180.871,32.065z" fill="#473628" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M216.136,25.397l-1.596-7.981h-0.179l-3.333,7.981H216.136 L216.136,25.397z M217.219,32.065l-0.45-2.414h-7.486l-1.113,2.414l2.015,0.382c0.49,0.136,0.664,0.69,0.664,1.348 c0,1.176-0.35,2.35-1.011,2.35h-9.888c-0.454,0-0.626-0.417-0.626-1.009c0-1.099,0.486-2.584,1.252-2.758l2.017-0.313 l7.592-15.821l-2.258-0.346c-0.489-0.073-0.7-0.767-0.7-1.556c0-1.073,0.418-2.382,1.082-2.382h10.547l4.392,20.105l2.262,0.382 c0.486,0.104,0.696,0.69,0.696,1.348c0,1.205-0.413,2.35-1.044,2.35h-10.314c-0.484,0-0.624-0.417-0.624-0.972 c0-1.21,0.455-2.518,1.294-2.725L217.219,32.065z" fill="#473628" fill-rule="evenodd"></path></svg>
+        <span class="fs-4"></span>
+      </a>
+    </header>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid">
+        <h1 class="display-5 fw-bold">Проверка интервалов</h1>
+        <p class="col-md fs-4">Автоматическая проверка интервалов по секторам (с заранее заданными адресами).</p>
+      </div>
+    </div>
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-vostok-tab" data-bs-toggle="pill" data-bs-target="#pills-vostok" type="button" role="tab" aria-controls="pills-vostok" aria-selected="true">ИМ Восток</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-centr-tab" data-bs-toggle="pill" data-bs-target="#pills-centr" type="button" role="tab" aria-controls="pills-centr" aria-selected="false">ИМ Центр</button>
+      </li>
+      
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade" id="pills-vostok" role="tabpanel" aria-labelledby="pills-vostok-tab">
+        <div class="result row mb-4" id="reusltBlock-Vostok">
+      
+        </div>
+      </div>
+      <div class="tab-pane fade" id="pills-centr" role="tabpanel" aria-labelledby="pills-centr-tab">
+        <div class="result row mb-4" id="reusltBlock-Centr">
+      
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Адреса по секторам ИМ Центр
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Адреса
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Адреса по секторам ИМ Восток
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Адреса
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; 2023
+    </footer>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="main.js?131314234234"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
