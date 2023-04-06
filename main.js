@@ -269,7 +269,7 @@ let centrAddresses = [
         console.log("");
 
         let reusltBlock = document.getElementById('reusltBlock-Vostok');
-        reusltBlock.insertAdjacentHTML('beforeEnd', `<div class="col-4 pb-4"><div class="card shadow-sm h-100">
+        reusltBlock.insertAdjacentHTML('beforeEnd', `<div class="col-12 col-md-4 pb-4"><div class="card shadow-sm h-100">
             <div class="card-body">
             <h5 class="card-title">${vostokAddresses[i].sector}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${vostokAddresses[i].address}</h6>
