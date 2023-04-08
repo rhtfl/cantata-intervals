@@ -264,9 +264,26 @@ let centrAddresses = [
         const isoStr1 = getDaysVostok.days[1].date;
         const date1 = new Date(isoStr1.slice(0, -1));
 
-        console.log("Дата 0: " + date0.toLocaleDateString());
-        console.log("Интервалы 0: " + getDaysVostok.days[0].intervals);
-        console.log("");
+        const isoStr2 = getDaysVostok.days[2].date;
+        const date2 = new Date(isoStr2.slice(0, -1));
+
+        const isoStr3 = getDaysVostok.days[3].date;
+        const date3 = new Date(isoStr3.slice(0, -1));
+
+        const isoStr4 = getDaysVostok.days[4].date;
+        const date4 = new Date(isoStr4.slice(0, -1));
+
+        const isoStr5 = getDaysVostok.days[5].date;
+        const date5 = new Date(isoStr5.slice(0, -1));
+
+        const isoStr6 = getDaysVostok.days[6].date;
+        const date6 = new Date(isoStr6.slice(0, -1));
+
+        // console.log("Дата 0: " + date0.toLocaleDateString());
+        // console.log("Интервалы 0: " + getDaysVostok.days[0].intervals);
+        // console.log("");
+
+        console.log(getDaysVostok);
 
         let reusltBlock = document.getElementById('reusltBlock-Vostok');
         reusltBlock.insertAdjacentHTML('beforeEnd', `<div class="col-12 col-md-4 pb-4"><div class="card shadow-sm h-100">
@@ -277,6 +294,16 @@ let centrAddresses = [
             <div class="sectora" id="sectoraV-${i}">${getDaysVostok.days[0].intervals}</div>
             <p class="card-text mb-1"></br>Дата: ${date1.toLocaleDateString()}</p>
             <div class="sectora" id="sectoraV-${i}">${getDaysVostok.days[1].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date2.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraV-${i}">${getDaysVostok.days[2].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date3.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraV-${i}">${getDaysVostok.days[3].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date4.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraV-${i}">${getDaysVostok.days[4].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date5.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraV-${i}">${getDaysVostok.days[5].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date6.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraV-${i}">${getDaysVostok.days[6].intervals}</div>
             </div>
         </div></div>`)
 
@@ -291,6 +318,51 @@ let centrAddresses = [
             }
         });
         o[1].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+        o[2].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+        o[3].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+        o[4].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+        o[5].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+        o[6].childNodes.forEach(e => {
             let content;
             if (e.nodeType == 3 && (content = e.textContent.trim())) {
                 let span = document.createElement("span");
@@ -341,9 +413,24 @@ let centrAddresses = [
         const isoStr1 = getDaysCentr.days[1].date;
         const date1 = new Date(isoStr1.slice(0, -1));
 
-        console.log("Дата 0: " + date0.toLocaleDateString());
-        console.log("Интервалы 0: " + getDaysCentr.days[0].intervals);
-        console.log("");
+        const isoStr2 = getDaysCentr.days[2].date;
+        const date2 = new Date(isoStr2.slice(0, -1));
+        
+        const isoStr3 = getDaysCentr.days[3].date;
+        const date3 = new Date(isoStr3.slice(0, -1));
+
+        const isoStr4 = getDaysCentr.days[4].date;
+        const date4 = new Date(isoStr4.slice(0, -1));
+
+        const isoStr5 = getDaysCentr.days[5].date;
+        const date5 = new Date(isoStr5.slice(0, -1));
+
+        const isoStr6 = getDaysCentr.days[6].date;
+        const date6 = new Date(isoStr6.slice(0, -1));
+
+        // console.log("Дата 0: " + date0.toLocaleDateString());
+        // console.log("Интервалы 0: " + getDaysCentr.days[0].intervals);
+        // console.log("");
 
         let reusltBlock = document.getElementById('reusltBlock-Centr');
         reusltBlock.insertAdjacentHTML('beforeEnd', `<div class="col-12 col-md-4 pb-4"><div class="card shadow-sm h-100">
@@ -354,6 +441,16 @@ let centrAddresses = [
             <div class="sectora" id="sectoraC-${l}">${getDaysCentr.days[0].intervals}</div>
             <p class="card-text mb-1"></br>Дата: ${date1.toLocaleDateString()}</p>
             <div class="sectora" id="sectoraC-${l}">${getDaysCentr.days[1].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date2.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraC-${l}">${getDaysCentr.days[2].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date3.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraC-${l}">${getDaysCentr.days[3].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date4.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraC-${l}">${getDaysCentr.days[4].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date5.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraC-${l}">${getDaysCentr.days[5].intervals}</div>
+            <p class="card-text mb-1"></br>Дата: ${date6.toLocaleDateString()}</p>
+            <div class="sectora" id="sectoraC-${l}">${getDaysCentr.days[6].intervals}</div>
             </div>
         </div></div>`)
 
@@ -368,6 +465,56 @@ let centrAddresses = [
             }
         });
         oo[1].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+
+        oo[2].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+
+        oo[3].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+
+        oo[4].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+
+        oo[5].childNodes.forEach(e => {
+            let content;
+            if (e.nodeType == 3 && (content = e.textContent.trim())) {
+                let span = document.createElement("span");
+                span.className = "intervalText";
+                span.innerText = content;
+                e.parentNode.replaceChild(span, e);
+            }
+        });
+
+        oo[6].childNodes.forEach(e => {
             let content;
             if (e.nodeType == 3 && (content = e.textContent.trim())) {
                 let span = document.createElement("span");
