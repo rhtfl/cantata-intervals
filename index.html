@@ -36,20 +36,29 @@
       .d-none {
         display: none !important;
       }
+      br {
+        display: none !important;
+      }
+
+      .mb-1 {
+        margin: 8px 0px !important;
+      }
 
       .intervalText {
-        padding: 0px 14px;
+        /* padding: 0px 14px; */
         height: 48px;
         border: 1px solid rgba(48, 48, 48, 0.12);
         border-radius: 8px;
         cursor: pointer;
         text-align: center;
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        margin-right: 6px;
+        justify-content: center;
+        /* margin-right: 6px; */
         flex:0 0 auto;
         transition: .2s;
-        margin-bottom: 6px;
+        /* margin-bottom: 6px; */
+        flex-basis: 32%;
       }
 
       .intervalText:hover {
@@ -60,6 +69,7 @@
       .sectora {
         display: flex;
         flex-wrap: wrap;
+        gap: 6px 6px;
       }
 
       .tab-content {
