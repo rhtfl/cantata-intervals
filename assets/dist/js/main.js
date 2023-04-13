@@ -222,7 +222,7 @@ function fetchData(url, sklad, index) {
         serverDateShow.insertAdjacentHTML('beforeend', `
         <li class="list-group-item subtitle">Данные полученные с сервера для проверки:</li>
         <li class="list-group-item">Наименование населенного пункта: ${data.name}</li>
-        <li class="list-group-item">Название склада с сервера: ${data.info.warehouse}</li>
+        <li class="list-group-item">Название склада: ${data.info.warehouse}</li>
         <li class="list-group-item">Цена доставки: ${data.delivery.courier.cantata.price}&#8381</li>
         <li class="list-group-item">Бесплатная доставка от: ${data.delivery.courier.cantata.sumRequired}&#8381</li>
         `)
