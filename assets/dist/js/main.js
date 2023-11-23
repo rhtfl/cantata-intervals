@@ -13,12 +13,6 @@ let AddressesList = [
             "lon": "37.916963"
         },
         {
-            "sector": "4Б",
-            "address": "посёлок Литвиново, городской округ Щёлково, Московская область",
-            "lat": "56.009054",
-            "lon": "38.138191"
-        },
-        {
             "sector": "5",
             "address": "улица Плющева, 17к1, Москва",
             "lat": "55.739275",
@@ -29,12 +23,6 @@ let AddressesList = [
             "address": "улица Разина, 6с1, Балашиха, Московская область",
             "lat": "55.790150",
             "lon": "37.930015"
-        },
-        {
-            "sector": "5Б",
-            "address": "Рогожская улица, 166, Ногинск, Богородский городской округ, Московская область",
-            "lat": "55.850494",
-            "lon": "38.422130"
         },
         {
             "sector": "6",
@@ -202,6 +190,20 @@ let AddressesList = [
             "lat": "56.016984",
             "lon": "37.854530"
         }
+    ],
+    [
+    {
+        "sector": "Ногинск",
+        "address": "площадь Революции, 6, Павловский Посад, Московская область",
+        "lat": "55.780765",
+        "lon": "38.652189"
+    },
+    {
+        "sector": "Ногинск Молния",
+        "address": "Рогожская улица, 166, Ногинск, Богородский городской округ, Московская область",
+        "lat": "55.850494",
+        "lon": "38.422130"
+    }
     ]
 ];
 
@@ -276,11 +278,11 @@ function fetchData(url, sklad, index) {
         }
         changeViewIntervals();
     })
-    .catch(error => {
-        console.error(error);
-        alert("Обратитесь к Даниилу, чтобы починил:с")
-    }
-    );
+    // .catch(error => {
+    //     console.error(error);
+    //     alert("Обратитесь к Даниилу, чтобы починил:с")
+    // }
+    // );
 }
 
 function changeViewIntervals() {
@@ -309,13 +311,15 @@ function changeTextBtn(clickedElement){
 let renderSectorsVostok = false;
 let renderSectorsCenter = false;
 let renderSectorsSever = false;
+let renderSectorsNoginsk = false;
 function getIntervals(sklad) {
     bannerContent.classList.add('my-0');
+    
     
     if (sklad == 'Vostok' & renderSectorsVostok == false) {
             let resultBlock = document.querySelector('#reusltBlock-Vostok');
             for (i=0;i<AddressesList[0].length;i++) {
-                let link = 'https://deliveryback.vvdev.ru/api/delivery/delivery_calc?fullintervals=true&language=RU&lat_for_zone=' + AddressesList[0][i].lat + '&lon_for_zone=' + AddressesList[0][i].lon;
+                let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[0][i].lat + '&lon_for_zone=' + AddressesList[0][i].lon;
                 resultBlock.insertAdjacentHTML('beforeEnd', `
                 <div class="col-12 col-md-3 pb-3">
                 <div class="card">
@@ -340,7 +344,7 @@ function getIntervals(sklad) {
     if (sklad == 'Center' & renderSectorsCenter == false) {
         let resultBlock = document.querySelector('#reusltBlock-Center');
         for (i=0;i<AddressesList[1].length;i++) {
-            let link = 'https://deliveryback.vvdev.ru/api/delivery/delivery_calc?fullintervals=true&language=RU&lat_for_zone=' + AddressesList[1][i].lat + '&lon_for_zone=' + AddressesList[1][i].lon;
+            let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[1][i].lat + '&lon_for_zone=' + AddressesList[1][i].lon;
                 resultBlock.insertAdjacentHTML('beforeEnd', `
                 <div class="col-12 col-md-3 pb-3">
                 <div class="card">
@@ -365,7 +369,7 @@ function getIntervals(sklad) {
     if (sklad == 'Sever' & renderSectorsSever == false) {
         let resultBlock = document.querySelector('#reusltBlock-Sever');
         for (i=0;i<AddressesList[2].length;i++) {
-            let link = 'https://deliveryback.vvdev.ru/api/delivery/delivery_calc?fullintervals=true&language=RU&lat_for_zone=' + AddressesList[2][i].lat + '&lon_for_zone=' + AddressesList[2][i].lon;
+            let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[2][i].lat + '&lon_for_zone=' + AddressesList[2][i].lon;
                 resultBlock.insertAdjacentHTML('beforeEnd', `
                 <div class="col-12 col-md-3 pb-3">
                 <div class="card">
@@ -385,5 +389,30 @@ function getIntervals(sklad) {
                 fetchData(link, sklad, i);
         }
         renderSectorsSever = true;
+    }
+
+    if (sklad == 'Noginsk' & renderSectorsNoginsk == false) {
+        let resultBlock = document.querySelector('#reusltBlock-Noginsk');
+        for (i=0;i<AddressesList[3].length;i++) {
+            let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[3][i].lat + '&lon_for_zone=' + AddressesList[3][i].lon;
+                resultBlock.insertAdjacentHTML('beforeEnd', `
+                <div class="col-12 col-md-3 pb-3">
+                <div class="card">
+                    <div class="card-body" id="card-body-${sklad}-${i}">
+                        <h5 class="card-title">Сектор ${AddressesList[3][i].sector}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${AddressesList[3][i].address}</h6>
+                        <div class="list-group list-date" id="list-date-${sklad}-${i}">
+                        
+                        </div>
+                        <ul class="list-group list-group-flush list-server" id="list-server-${sklad}-${i}">
+
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                `);
+                fetchData(link, sklad, i);
+        }
+        renderSectorsNoginsk = true;
     }
 }
