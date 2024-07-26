@@ -319,7 +319,7 @@ function getIntervals(sklad) {
     if (sklad == 'Vostok' & renderSectorsVostok == false) {
             let resultBlock = document.querySelector('#reusltBlock-Vostok');
             for (i=0;i<AddressesList[0].length;i++) {
-                let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[0][i].lat + '&lon_for_zone=' + AddressesList[0][i].lon;
+                let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[0][i].lat + '&lon_for_zone=' + AddressesList[0][i].lon;
                 resultBlock.insertAdjacentHTML('beforeEnd', `
                 <div class="col-12 col-md-3 pb-3">
                 <div class="card">
@@ -344,7 +344,7 @@ function getIntervals(sklad) {
     if (sklad == 'Center' & renderSectorsCenter == false) {
         let resultBlock = document.querySelector('#reusltBlock-Center');
         for (i=0;i<AddressesList[1].length;i++) {
-            let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[1][i].lat + '&lon_for_zone=' + AddressesList[1][i].lon;
+            let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[1][i].lat + '&lon_for_zone=' + AddressesList[1][i].lon;
                 resultBlock.insertAdjacentHTML('beforeEnd', `
                 <div class="col-12 col-md-3 pb-3">
                 <div class="card">
@@ -369,7 +369,7 @@ function getIntervals(sklad) {
     if (sklad == 'Sever' & renderSectorsSever == false) {
         let resultBlock = document.querySelector('#reusltBlock-Sever');
         for (i=0;i<AddressesList[2].length;i++) {
-            let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[2][i].lat + '&lon_for_zone=' + AddressesList[2][i].lon;
+            let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[2][i].lat + '&lon_for_zone=' + AddressesList[2][i].lon;
                 resultBlock.insertAdjacentHTML('beforeEnd', `
                 <div class="col-12 col-md-3 pb-3">
                 <div class="card">
@@ -394,7 +394,7 @@ function getIntervals(sklad) {
     if (sklad == 'Noginsk' & renderSectorsNoginsk == false) {
         let resultBlock = document.querySelector('#reusltBlock-Noginsk');
         for (i=0;i<AddressesList[3].length;i++) {
-            let link = 'https://delivery.vvdev.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[3][i].lat + '&lon_for_zone=' + AddressesList[3][i].lon;
+            let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[3][i].lat + '&lon_for_zone=' + AddressesList[3][i].lon;
                 resultBlock.insertAdjacentHTML('beforeEnd', `
                 <div class="col-12 col-md-3 pb-3">
                 <div class="card">
