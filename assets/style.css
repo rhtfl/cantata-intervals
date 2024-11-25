@@ -62,11 +62,12 @@ br {
 .sectora {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 6px;
+  gap: 5px;
+  justify-content: space-between
 }
 
+
 .intervalText {
-  /* padding: 0px 14px; */
   height: 48px;
   border: 1px solid rgba(0,0,0,.25);
   border-radius: 8px;
@@ -75,11 +76,10 @@ br {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-right: 6px; */
-  flex: 0 0 auto;
   transition: .2s;
-  /* margin-bottom: 6px; */
-  flex-basis: 32%;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
 .intervalText:hover {
