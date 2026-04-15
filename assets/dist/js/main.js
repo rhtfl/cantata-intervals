@@ -1,478 +1,531 @@
-let AddressesList = [
-    [
+const ADDRESSES_BY_SKLAD = {
+    "Vostok": [
         {
-            "sector": "4",
-            "address": "Бауманская улица, 27, Москва",
-            "lat": "55.773998",
-            "lon": "37.678755"
+            "sector": "2-АВ",
+            "address": "Импортировано из KML (2-АВ)",
+            "lat": "55.942017",
+            "lon": "37.513951"
         },
         {
-            "sector": "4А",
-            "address": "улица Дмитриева, 4, Балашиха, Московская область",
-            "lat": "55.832402",
-            "lon": "37.923982", 
+            "sector": "2В",
+            "address": "Импортировано из KML (2В)",
+            "lat": "55.869488",
+            "lon": "37.591323"
+        },
+        {
+            "sector": "3",
+            "address": "Импортировано из KML (3)",
+            "lat": "55.852537",
+            "lon": "37.630611"
+        },
+        {
+            "sector": "3-А",
+            "address": "Импортировано из KML (3-А)",
+            "lat": "55.954557",
+            "lon": "37.837390"
+        },
+        {
+            "sector": "4",
+            "address": "Импортировано из KML (4)",
+            "lat": "55.790741",
+            "lon": "37.687817"
+        },
+        {
+            "sector": "4-А",
+            "address": "Импортировано из KML (4-А)",
+            "lat": "55.826376",
+            "lon": "37.969977"
         },
         {
             "sector": "5",
-            "address": "улица Плющева, 17к1, Москва",
-            "lat": "55.739275",
-            "lon": "37.762012"
+            "address": "Импортировано из KML (5)",
+            "lat": "55.732441",
+            "lon": "37.763681"
         },
         {
-            "sector": "5А",
-            "address": "улица Разина, 6с1, Балашиха, Московская область",
-            "lat": "55.790150",
-            "lon": "37.930015"
+            "sector": "5-А",
+            "address": "Импортировано из KML (5-А)",
+            "lat": "55.724857",
+            "lon": "38.025574"
         },
         {
             "sector": "6",
-            "address": "Краснодонская улица, 39А, Москва",
-            "lat": "55.675077",
-            "lon": "37.749535"
+            "address": "Импортировано из KML (6)",
+            "lat": "55.681601",
+            "lon": "37.723764"
         },
         {
-            "sector": "6А",
-            "address": "улица Калинина, 29/5, рабочий посёлок Малаховка, городской округ Люберцы, Московская область,",
-            "lat": "55.635493",
-            "lon": "37.978597"
+            "sector": "6-А",
+            "address": "Импортировано из KML (6-А)",
+            "lat": "55.625180",
+            "lon": "38.046021"
         },
-        // {
-        //     "sector": "6Б",
-        //     "address": "Дунайская улица, 11, Раменское, Московская область, 140104",
-        //     "lat": "55.563391",
-        //     "lon": "38.211381"
-        // },
         {
             "sector": "7",
-            "address": "Домодедовская улица, 1к3, Москва",
-            "lat": "55.614643",
-            "lon": "37.707566"
+            "address": "Импортировано из KML (7)",
+            "lat": "55.650474",
+            "lon": "37.667338"
         },
         {
-            "sector": "7А",
-            "address": "Белокаменное шоссе, 7, Видное, Ленинский городской округ, Московская область",
-            "lat": "55.551359",
-            "lon": "37.742941"
+            "sector": "7-А",
+            "address": "Импортировано из KML (7-А)",
+            "lat": "55.520324",
+            "lon": "37.793833"
         }
-        // {
-        //     "sector": "7Б",
-        //     "address": "деревня Галушино, 2, Раменский городской округ, Московская область",
-        //     "lat": "55.447121",
-        //     "lon": "37.986268"
-        // },
-        // {
-        //     "sector": "Домодедово",
-        //     "address": "улица Кирова, 3к1, микрорайон Центральный, Домодедово, Московская область",
-        //     "lat": "55.441200",
-        //     "lon": "37.749196"
-        // },
-        // {
-        //     "sector": "Раменское",
-        //     "address": "улица Приборостроителей, 12, Раменское, Московская область",
-        //     "lat": "55.573575",
-        //     "lon": "38.248613"
-        // },
-        // {
-        //     "sector": "Жуковский",
-        //     "address": "улица Ломоносова, 16, Жуковский, Московская область",
-        //     "lat": "55.595433",
-        //     "lon": "38.118547"
-        // }
     ],
-    [
-        {
-            "sector": "16",
-            "address": "Малая Бронная улица, 12с4, Москва",
-            "lat": "55.761234",
-            "lon": "37.597082"
-        },
-        {
-            "sector": "10",
-            "address": "улица Маршала Тухачевского, 58, Москва",
-            "lat": "55.784830",
-            "lon": "37.458526"
-        },
-        {
-            "sector": "10А",
-            "address": "деревня Барвиха, 78А, Одинцовский городской округ, Московская область",
-            "lat": "55.748736",
-            "lon": "37.290289"
-        },
-        // {
-        //     "sector": "10Б",
-        //     "address": "коттеджный посёлок Монолит, 103, деревня Воронино, городской округ Истра, Московская область",
-        //     "lat": "55.788029",
-        //     "lon": "37.003673"
-        // },
-        {
-            "sector": "9",
-            "address": "микрорайон Ленинские Горы, 1с10, район Раменки, Западный административный округ, Москва",
-            "lat": "55.702840",
-            "lon": "37.522387"
-        },
-        {
-            "sector": "9А",
-            "address": "деревня Переделки, 18, Одинцовский городской округ, Московская область",
-            "lat": "55.665086",
-            "lon": "37.329141"
-        },
-        // {
-        //     "sector": "9-Б1",
-        //     "address": "улица Текстильщиков, 3к3, Троицк, Москва",
-        //     "lat": "55.490398",
-        //     "lon": "37.307055"
-        // },
-        // {
-        //     "sector": "9-Б2",
-        //     "address": "деревня Митькино, 74, Одинцовский городской округ, Московская область",
-        //     "lat": "55.604687",
-        //     "lon": "37.101293"
-        // },
-        {
-            "sector": "8",
-            "address": "Малая Юшуньская улица, 1с1, Москва",
-            "lat": "55.653782",
-            "lon": "37.594010"
-        },
-        {
-            "sector": "8А",
-            "address": "3-я Павлоградская улица, 6, Москва",
-            "lat": "55.544611",
-            "lon": "37.577849"
-        }
-        // {
-        //     "sector": "8-Б1",
-        //     "address": "улица 50 лет ВЛКСМ, 16, Подольск, Московская область",
-        //     "lat": "55.425780",
-        //     "lon": "37.537525"
-        // },
-        // {
-        //     "sector": "8-Б2",
-        //     "address": "СНТ Росинка, 2, городской округ Подольск, Московская область",
-        //     "lat": "55.454351",
-        //     "lon": "37.402632"
-        // }
-    ],
-    [
+    "Center": [
         {
             "sector": "1",
-            "address": "Кронштадтский бульвар, 24к1с1, Москва",
-            "lat": "55.847922",
-            "lon": "37.510089"
+            "address": "Импортировано из KML (1)",
+            "lat": "55.829532",
+            "lon": "37.499057"
         },
         {
-            "sector": "1А",
-            "address": "Пятницкое шоссе, 48с1, Москва",
-            "lat": "55.861257",
-            "lon": "37.357860"
-        },
-        // {
-        //     "sector": "1Б",
-        //     "address": "СНТ Горетовка-2, 53, городской округ Солнечногорск, Московская область",
-        //     "lat": "55.958991",
-        //     "lon": "37.114480"
-        // },
-        // {
-        //     "sector": "1Б-1",
-        //     "address": "Савёлкинский проезд, 4к1, Зеленоград, Москва",
-        //     "lat": "55.991304",
-        //     "lon": "37.216286"
-        // },
-        {
-            "sector": "2",
-            "address": "Дубнинская улица, 12к2, Москва",
-            "lat": "55.864475",
-            "lon": "37.569683"
+            "sector": "1-А",
+            "address": "Импортировано из KML (1-А)",
+            "lat": "55.863746",
+            "lon": "37.335942"
         },
         {
-            "sector": "2А",
-            "address": "площадь Собина, 3, Долгопрудный, Московская область",
-            "lat": "55.934059",
-            "lon": "37.514212"
-        },
-        // {
-        //     "sector": "2Б",
-        //     "address": "улица Васильковое Поле, 001, деревня Мышецкое, городской округ Химки, Московская область",
-        //     "lat": "56.037398",
-        //     "lon": "37.362415"
-        // },
-        {
-            "sector": "3",
-            "address": "улица Менжинского, 23к2, Москва",
-            "lat": "55.869137",
-            "lon": "37.659452"
+            "sector": "10-1",
+            "address": "Импортировано из KML (10-1)",
+            "lat": "55.736568",
+            "lon": "37.460856"
         },
         {
-            "sector": "3А",
-            "address": "Ярославское шоссе, 116Ас1, Мытищи, Московская область",
-            "lat": "55.909812",
-            "lon": "37.782126"
+            "sector": "10-2",
+            "address": "Импортировано из KML (10-2)",
+            "lat": "55.778969",
+            "lon": "37.488327"
         },
         {
-            "sector": "4А",
-            "address": "Малая Бородинская улица, 1к1, деревня Бородино, городской округ Мытищи, Московская область",
-            "lat": "55.922627",
-            "lon": "37.661482"
+            "sector": "10-A",
+            "address": "Импортировано из KML (10-A)",
+            "lat": "55.748527",
+            "lon": "37.256863"
+        },
+        {
+            "sector": "16-11",
+            "address": "Импортировано из KML (16-11)",
+            "lat": "55.776915",
+            "lon": "37.601646"
+        },
+        {
+            "sector": "16-12",
+            "address": "Импортировано из KML (16-12)",
+            "lat": "55.740992",
+            "lon": "37.641495"
+        },
+        {
+            "sector": "16-13",
+            "address": "Импортировано из KML (16-13)",
+            "lat": "55.746693",
+            "lon": "37.559569"
+        },
+        {
+            "sector": "2-АЦ",
+            "address": "Импортировано из KML (2-АЦ)",
+            "lat": "55.949779",
+            "lon": "37.473211"
+        },
+        {
+            "sector": "2Ц",
+            "address": "Импортировано из KML (2Ц)",
+            "lat": "55.838113",
+            "lon": "37.567756"
+        },
+        {
+            "sector": "8-1",
+            "address": "Импортировано из KML (8-1)",
+            "lat": "55.695678",
+            "lon": "37.618806"
+        },
+        {
+            "sector": "8-2",
+            "address": "Импортировано из KML (8-2)",
+            "lat": "55.618157",
+            "lon": "37.563954"
+        },
+        {
+            "sector": "8-А",
+            "address": "Импортировано из KML (8-А)",
+            "lat": "55.503842",
+            "lon": "37.525719"
+        },
+        {
+            "sector": "9-1",
+            "address": "Импортировано из KML (9-1)",
+            "lat": "55.679189",
+            "lon": "37.512193"
+        },
+        {
+            "sector": "9-2",
+            "address": "Импортировано из KML (9-2)",
+            "lat": "55.700829",
+            "lon": "37.477325"
+        },
+        {
+            "sector": "9-А",
+            "address": "Импортировано из KML (9-А)",
+            "lat": "55.619368",
+            "lon": "37.319330"
         }
-        // {
-        //     "sector": "3Б",
-        //     "address": "Янтарная улица, 27, село Марфино, городской округ Мытищи, Московская область",
-        //     "lat": "56.073630",
-        //     "lon": "37.535457"
-        // },
-        // {
-        //     "sector": "4Б",
-        //     "address": "улица Достоевского, 26, рабочий посёлок Лесной, городской округ Пушкинский, Московская область",
-        //     "lat": "56.079906",
-        //     "lon": "37.924258"
-        // }
-    ],
-    [
-    {
-        "sector": "Ногинск Молния",
-        "address": "Рогожская улица, 166, Ногинск, Богородский городской округ, Московская область",
-        "lat": "55.850494",
-        "lon": "38.422130"
-    },
-    // {
-    //     "sector": "1-Н",
-    //     "address": "Школьная улица, 5, Электроугли, Богородский городской округ, Московская область",
-    //     "lat": "55.716460",
-    //     "lon": "38.212987"
-    // },
-    {
-        "sector": "2-Н",
-        "address": "улица Строителей, 1, рабочий посёлок Свердловский, городской округ Лосино-Петровский, Московская область",
-        "lat": "55.901902",
-        "lon": "38.143471"
-    },
-    {
-        "sector": "2-Н2",
-        "address": "улица Мальцево, 34, посёлок Краснознаменский, городской округ Щёлково, Московская область",
-        "lat": "55.935541",
-        "lon": "37.939347"
-    }
-    // {
-    //     "sector": "3-Н",
-    //     "address": "улица Серова, 40, деревня Боровково, Богородский городской округ, Московская область",
-    //     "lat": "55.989747",
-    //     "lon": "38.542765"
-    // },
-    // {
-    //     "sector": "4-Н",
-    //     "address": "улица Ленина, 4А, Ликино-Дулёво, Орехово-Зуевский городской округ, Московская область",
-    //     "lat": "55.706781",
-    //     "lon": "38.957203"
-    // }
     ]
-];
+};
 
-function fetchData(url, sklad, index) {
+const SKLAD_CONFIG = {
+    "Vostok": {
+        "resultBlockId": "reusltBlock-Vostok"
+    },
+    "Center": {
+        "resultBlockId": "reusltBlock-Center"
+    }
+};
+
+const renderState = {
+    "Vostok": false,
+    "Center": false
+};
+
+let activeSklad = null;
+
+function setStatus(text) {
+    const el = document.querySelector("#appStatus");
+    if (!el) return;
+    el.textContent = text || "";
+}
+
+function createCardMarkup(sklad, index, sectorData) {
+    const lat = sectorData.lat;
+    const lon = sectorData.lon;
+    const mapUrl = `https://yandex.ru/maps/?ll=${lon},${lat}&mode=point&pt=${lon},${lat}&z=15`;
+    const coordsText = `${lat}, ${lon}`;
+
+    return `
+        <article class="card is-loading" aria-label="Сектор ${sectorData.sector}">
+            <div class="card-body" id="card-body-${sklad}-${index}">
+                <h3 class="card-title">Сектор ${sectorData.sector}</h3>
+                <p class="card-subtitle">
+                    <a class="coord-link" href="${mapUrl}" target="_blank" rel="noopener noreferrer" title="Открыть в Яндекс.Картах">
+                        <i class="bi bi-geo-alt"></i>
+                        ${coordsText}
+                    </a>
+                </p>
+                <div class="dates" id="list-date-${sklad}-${index}">
+                    <div class="date-item">
+                        <div class="date-head">
+                            <span class="skeleton skeleton-line lg" style="width: 64px"></span>
+                            <span class="skeleton skeleton-line lg" style="width: 96px"></span>
+                        </div>
+                        <div class="skeleton-row">
+                            <span class="skeleton skeleton-chip"></span>
+                            <span class="skeleton skeleton-chip"></span>
+                        </div>
+                    </div>
+                    <div class="date-item">
+                        <div class="date-head">
+                            <span class="skeleton skeleton-line lg" style="width: 64px"></span>
+                            <span class="skeleton skeleton-line lg" style="width: 96px"></span>
+                        </div>
+                        <div class="skeleton-row">
+                            <span class="skeleton skeleton-chip"></span>
+                            <span class="skeleton skeleton-chip"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="server" id="list-server-${sklad}-${index}">
+                    <div class="date-item">
+                        <div class="date-head">
+                            <span class="skeleton skeleton-line" style="width: 140px"></span>
+                            <span class="skeleton skeleton-line" style="width: 90px"></span>
+                        </div>
+                        <span class="skeleton skeleton-line" style="width: 85%"></span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    `;
+}
+
+function fetchData(url, sklad, index, sectorData) {
     fetch(url, {
         "headers": {
             "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0eXBlIjoiY29tcGFuaWVzIiwic2VjcmV0IjoiMDViMDMxNGU4OWZjMjk5MTEwOTEzYmYxM2ExYWJiZjhhYmMwMjU2NCIsImlhdCI6MTYwNzAwMDM1MX0.E7pELaHqlRTppS3q1iQoZoj14qOtGSXXlNtl1HbhnFc"
         }
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
+        .then(async (response) => {
+            if (!response.ok) {
+                let bodyText = "";
+                try {
+                    bodyText = await response.text();
+                } catch (_) {
+                    bodyText = "";
+                }
+                const snippet = bodyText ? bodyText.slice(0, 400) : "";
+                throw new Error(`HTTP ${response.status} ${response.statusText}${snippet ? `: ${snippet}` : ""}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const intervals = data?.delivery?.courier?.cantata?.days;
+            const serverInfo = document.querySelector(`#list-server-${sklad}-${index}`);
+            const dateList = document.querySelector(`#list-date-${sklad}-${index}`);
+            const cardBody = document.querySelector(`#card-body-${sklad}-${index}`);
+            const card = cardBody ? cardBody.closest(".card") : null;
 
-        let intervals = data.delivery.courier.cantata.days;
-        // console.log(intervals);
+            if (dateList) dateList.innerHTML = "";
+            if (serverInfo) serverInfo.innerHTML = "";
+            if (card) card.classList.remove("is-loading");
 
-        let serverDateShow = document.querySelector('#list-server-' + sklad + "-" + index);
-        serverDateShow.insertAdjacentHTML('beforeend', `
-        <li class="list-group-item subtitle">Данные полученные с сервера для проверки:</li>
-        <li class="list-group-item">Наименование населенного пункта: ${data.name}</li>
-        <li class="list-group-item">Название склада: ${data.info.warehouse}</li>
-        <li class="list-group-item">Цена доставки: ${data.delivery.courier.cantata.price}&#8381</li>
-        <li class="list-group-item">Бесплатная доставка от: ${data.delivery.courier.cantata.sumRequired}&#8381</li>
-        `)
+            if (!Array.isArray(intervals)) {
+                const lat = sectorData?.lat ?? "—";
+                const lon = sectorData?.lon ?? "—";
+                const sector = sectorData?.sector ?? "—";
+                const debug = {
+                    ok: true,
+                    name: data?.name,
+                    info: data?.info,
+                    delivery: data?.delivery,
+                };
 
-        // sumRequired необходимая сумма для бесплатной доставки
+                const message = "Ответ API не содержит delivery.courier.cantata.days (массив).";
+                serverInfo.insertAdjacentHTML("beforeend", `
+                    <div class="date-item">
+                        <div class="date-head">
+                            <p class="date-title" style="color: var(--danger)">Ошибка</p>
+                            <p class="date-meta">${message}</p>
+                        </div>
+                        <details class="error-details" open>
+                            <summary>Показать детали</summary>
+                            <pre class="error-pre">${escapeHtml([
+                                `sklad: ${sklad}`,
+                                `sector: ${sector}`,
+                                `lat: ${lat}`,
+                                `lon: ${lon}`,
+                                `url: ${url}`,
+                                `note: days отсутствует или не массив`,
+                                `response (partial): ${JSON.stringify(debug, null, 2)}`
+                            ].join("\n"))}</pre>
+                        </details>
+                    </div>
+                `);
+                return;
+            }
 
-        let list = document.querySelector('#list-date-' + sklad + "-" + index);
-        // console.log(list);
-        for(a = 0; a < intervals.length; a++){
-            if (a < 2) {
-                list.insertAdjacentHTML('beforeEnd', `
-                <div class="list-group-item list-group-item-action list-date-item">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-2">Дата: ${new Date(intervals[a].date.slice(0, -1)).toLocaleDateString()}</h6>
+            serverInfo.insertAdjacentHTML("beforeend", `
+                <div class="date-item">
+                    <div class="date-head">
+                        <p class="date-title">Данные для проверки</p>
+                        <p class="date-meta">${data.info.warehouse}</p>
                     </div>
                     <div class="sectora">
-                    ${intervals[a].intervals}
+                        <span class="intervalText is-wide" title="Город: ${data.name}">Город: ${data.name}</span>
+                        <span class="intervalText is-wide" title="Цена: ${data.delivery.courier.cantata.price}₽">Цена: ${data.delivery.courier.cantata.price}₽</span>
+                        <span class="intervalText" title="Бесплатно от: ${data.delivery.courier.cantata.sumRequired}₽">Бесплатно от: ${data.delivery.courier.cantata.sumRequired}₽</span>
                     </div>
                 </div>
-                `)
-            }
-            if (a == 2) {
-                list.insertAdjacentHTML('beforeEnd', `
-                    <div class="collapse list-group-item list-group-item-action list-group-collapse" id="collapse-${sklad}-${index}">
-                        <div class="list-group-item list-group-item-action list-date-item">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h6 class="mb-2">Дата: ${new Date(intervals[a].date.slice(0, -1)).toLocaleDateString()}</h6>
+            `);
+
+            let moreContainerId = `more-${sklad}-${index}`;
+
+            for (let i = 0; i < intervals.length; i++) {
+                const dateObj = new Date(intervals[i].date.slice(0, -1));
+                const dateStr = dateObj.toLocaleDateString();
+                const isToday = isSameLocalDate(dateObj, new Date());
+                const intervalMarkup = `
+                    <div class="date-item">
+                        <div class="date-head">
+                            <p class="date-title">Дата${isToday ? " (сегодня)" : ""}</p>
+                            <p class="date-meta">${dateStr}</p>
                         </div>
-                        <div class="sectora">
-                        ${intervals[a].intervals}
+                        <div class="sectora">${intervals[i].intervals}</div>
+                    </div>
+                `;
+
+                if (i < 2) {
+                    dateList.insertAdjacentHTML("beforeend", intervalMarkup);
+                    continue;
+                }
+
+                if (i === 2) {
+                    dateList.insertAdjacentHTML("beforeend", `
+                        <div id="${moreContainerId}" hidden>
+                            ${intervalMarkup}
                         </div>
-                        </div>                
-                    </div>
-                    <button class="list-group-item list-group-item-action btn-show-more" onclick="changeTextBtn(this);" id="btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${sklad}-${index}" aria-expanded="false" aria-controls="collapseExample">Показать больше дней</button>
-                `)
+                        <button class="btn-more" onclick="toggleMoreDays('${moreContainerId}', this);" type="button">Показать больше дней</button>
+                    `);
+                    continue;
+                }
+
+                const moreBlock = document.querySelector(`#${moreContainerId}`);
+                if (moreBlock) moreBlock.insertAdjacentHTML("beforeend", intervalMarkup);
             }
-            let listCollapse = document.querySelector('#collapse-' + sklad + "-" + index);
-            if (a > 2) {
-                listCollapse.insertAdjacentHTML('beforeEnd', `
-                <div class="list-group-item list-group-item-action list-date-item">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-2">Дата: ${new Date(intervals[a].date.slice(0, -1)).toLocaleDateString()}</h6>
+
+            changeViewIntervals();
+        })
+        .catch(error => {
+            console.error(error);
+
+            const serverInfo = document.querySelector(`#list-server-${sklad}-${index}`);
+            const dateList = document.querySelector(`#list-date-${sklad}-${index}`);
+            const cardBody = document.querySelector(`#card-body-${sklad}-${index}`);
+            const card = cardBody ? cardBody.closest(".card") : null;
+
+            if (dateList) dateList.innerHTML = "";
+            if (card) card.classList.remove("is-loading");
+
+            if (serverInfo) {
+                serverInfo.innerHTML = "";
+                const lat = sectorData?.lat ?? "—";
+                const lon = sectorData?.lon ?? "—";
+                const sector = sectorData?.sector ?? "—";
+                const msg = error?.message ? String(error.message) : String(error);
+                serverInfo.insertAdjacentHTML("beforeend", `
+                    <div class="date-item">
+                        <div class="date-head">
+                            <p class="date-title" style="color: var(--danger)">Ошибка</p>
+                            <p class="date-meta">Не удалось получить данные с сервера</p>
+                        </div>
+                        <details class="error-details">
+                            <summary>Показать детали</summary>
+                            <pre class="error-pre">${escapeHtml([
+                                `sklad: ${sklad}`,
+                                `sector: ${sector}`,
+                                `lat: ${lat}`,
+                                `lon: ${lon}`,
+                                `url: ${url}`,
+                                `error: ${msg}`
+                            ].join("\n"))}</pre>
+                        </details>
                     </div>
-                    <div class="sectora">
-                    ${intervals[a].intervals}
-                    </div>
-                </div>
-            `)
+                `);
             }
-            
-        }
-        changeViewIntervals();
-    })
-    // .catch(error => {
-    //     console.error(error);
-    //     alert("Обратитесь к Даниилу, чтобы починил:с")
-    // }
-    // );
+        });
+}
+
+function escapeHtml(input) {
+    return String(input)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 }
 
 function changeViewIntervals() {
-    parentList = document.querySelectorAll('.sectora');
-    // console.log(parentList);
-    for(i=0;i<parentList.length;i++) {
-        parentList[i].childNodes.forEach(e => {
+    const parentList = document.querySelectorAll(".sectora");
+
+    for (let i = 0; i < parentList.length; i++) {
+        parentList[i].childNodes.forEach(node => {
             let content;
-            if (e.nodeType == 3 && (content = e.textContent.trim())) {
-                let span = document.createElement("span");
+
+            if (node.nodeType === 3 && (content = node.textContent.trim())) {
+                const span = document.createElement("span");
                 span.className = "intervalText";
+                const cls = intervalToClass(content);
+                if (cls) span.classList.add(cls);
                 span.innerText = content;
-                e.parentNode.replaceChild(span, e);
+                node.parentNode.replaceChild(span, node);
             }
         });
     }
-    
 }
 
-function changeTextBtn(clickedElement){
-    // console.log(clickedElement.innerHTML);
+function intervalToClass(text) {
+    // Map exact interval strings to CSS classes
+    // (we keep this strict to avoid coloring unexpected content)
+    switch (text) {
+        case "07:00-10:00":
+            return "i-0700-1000";
+        case "10:00-14:00":
+            return "i-1000-1400";
+        case "14:00-18:00":
+            return "i-1400-1800";
+        case "18:00-22:00":
+            return "i-1800-2200";
+        case "21:00-00:00":
+            return "i-2100-0000";
+        case "09:00-17:00":
+            return "i-0900-1700";
+        default:
+            return "";
+    }
+}
+
+function changeTextBtn(clickedElement) {
     clickedElement.innerHTML =
-    (clickedElement.innerHTML === 'Показать больше дней') ? clickedElement.innerHTML = 'Скрыть' : clickedElement.innerHTML = 'Показать больше дней';
+        clickedElement.innerHTML === "Показать больше дней" ? "Скрыть" : "Показать больше дней";
 }
 
-let renderSectorsVostok = false;
-let renderSectorsCenter = false;
-let renderSectorsSever = false;
-let renderSectorsNoginsk = false;
+function toggleMoreDays(containerId, btn) {
+    const el = document.getElementById(containerId);
+    if (!el || !btn) return;
+    const isHidden = el.hasAttribute("hidden");
+    if (isHidden) el.removeAttribute("hidden");
+    else el.setAttribute("hidden", "");
+    btn.textContent = isHidden ? "Скрыть" : "Показать больше дней";
+}
+
+function isSameLocalDate(a, b) {
+    return (
+        a.getFullYear() === b.getFullYear() &&
+        a.getMonth() === b.getMonth() &&
+        a.getDate() === b.getDate()
+    );
+}
+
 function getIntervals(sklad) {
-    bannerContent.classList.add('my-0');
-    
-    
-    if (sklad == 'Vostok' & renderSectorsVostok == false) {
-            let resultBlock = document.querySelector('#reusltBlock-Vostok');
-            for (i=0;i<AddressesList[0].length;i++) {
-                let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[0][i].lat + '&lon_for_zone=' + AddressesList[0][i].lon;
-                resultBlock.insertAdjacentHTML('beforeEnd', `
-                <div class="col-12 col-md-3 pb-3">
-                <div class="card">
-                    <div class="card-body" id="card-body-${sklad}-${i}">
-                        <h5 class="card-title">Сектор ${AddressesList[0][i].sector}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${AddressesList[0][i].address}</h6>
-                        <div class="list-group list-date" id="list-date-${sklad}-${i}">
-                        
-                        </div>
-                        <ul class="list-group list-group-flush list-server" id="list-server-${sklad}-${i}">
+    const banner = document.querySelector("#bannerContent");
+    const config = SKLAD_CONFIG[sklad];
 
-                        </ul>
-                    </div>
-                </div>
-                </div>
-                `);
-                fetchData(link, sklad, i);
-            }
-            renderSectorsVostok = true;
+    if (!config || renderState[sklad]) {
+        return;
     }
 
-    if (sklad == 'Center' & renderSectorsCenter == false) {
-        let resultBlock = document.querySelector('#reusltBlock-Center');
-        for (i=0;i<AddressesList[1].length;i++) {
-            let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[1][i].lat + '&lon_for_zone=' + AddressesList[1][i].lon;
-                resultBlock.insertAdjacentHTML('beforeEnd', `
-                <div class="col-12 col-md-3 pb-3">
-                <div class="card">
-                    <div class="card-body" id="card-body-${sklad}-${i}">
-                        <h5 class="card-title">Сектор ${AddressesList[1][i].sector}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${AddressesList[1][i].address}</h6>
-                        <div class="list-group list-date" id="list-date-${sklad}-${i}">
-                        
-                        </div>
-                        <ul class="list-group list-group-flush list-server" id="list-server-${sklad}-${i}">
+    if (banner) banner.classList.add("is-compact");
 
-                        </ul>
-                    </div>
-                </div>
-                </div>
-                `);
-                fetchData(link, sklad, i);
-        }
-        renderSectorsCenter = true;
+    const resultBlock = document.querySelector(`#${config.resultBlockId}`);
+    const sectors = ADDRESSES_BY_SKLAD[sklad] || [];
+
+    if (sklad === activeSklad) setStatus("Загрузка…");
+
+    for (let i = 0; i < sectors.length; i++) {
+        const sector = sectors[i];
+        const link = `https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=${sector.lat}&lon_for_zone=${sector.lon}`;
+
+        resultBlock.insertAdjacentHTML("beforeend", createCardMarkup(sklad, i, sector));
+        fetchData(link, sklad, i, sector);
     }
 
-    if (sklad == 'Sever' & renderSectorsSever == false) {
-        let resultBlock = document.querySelector('#reusltBlock-Sever');
-        for (i=0;i<AddressesList[2].length;i++) {
-            let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[2][i].lat + '&lon_for_zone=' + AddressesList[2][i].lon;
-                resultBlock.insertAdjacentHTML('beforeEnd', `
-                <div class="col-12 col-md-3 pb-3">
-                <div class="card">
-                    <div class="card-body" id="card-body-${sklad}-${i}">
-                        <h5 class="card-title">Сектор ${AddressesList[2][i].sector}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${AddressesList[2][i].address}</h6>
-                        <div class="list-group list-date" id="list-date-${sklad}-${i}">
-                        
-                        </div>
-                        <ul class="list-group list-group-flush list-server" id="list-server-${sklad}-${i}">
+    renderState[sklad] = true;
 
-                        </ul>
-                    </div>
-                </div>
-                </div>
-                `);
-                fetchData(link, sklad, i);
-        }
-        renderSectorsSever = true;
-    }
-
-    if (sklad == 'Noginsk' & renderSectorsNoginsk == false) {
-        let resultBlock = document.querySelector('#reusltBlock-Noginsk');
-        for (i=0;i<AddressesList[3].length;i++) {
-            let link = 'https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=' + AddressesList[3][i].lat + '&lon_for_zone=' + AddressesList[3][i].lon;
-                resultBlock.insertAdjacentHTML('beforeEnd', `
-                <div class="col-12 col-md-3 pb-3">
-                <div class="card">
-                    <div class="card-body" id="card-body-${sklad}-${i}">
-                        <h5 class="card-title">Сектор ${AddressesList[3][i].sector}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${AddressesList[3][i].address}</h6>
-                        <div class="list-group list-date" id="list-date-${sklad}-${i}">
-                        
-                        </div>
-                        <ul class="list-group list-group-flush list-server" id="list-server-${sklad}-${i}">
-
-                        </ul>
-                    </div>
-                </div>
-                </div>
-                `);
-                fetchData(link, sklad, i);
-        }
-        renderSectorsNoginsk = true;
-    }
+    if (sklad === activeSklad) setTimeout(() => setStatus("Готово"), 300);
 }
+
+function activateSklad(sklad) {
+    activeSklad = sklad;
+
+    const btnV = document.getElementById("skladBtnVostok");
+    const btnC = document.getElementById("skladBtnCenter");
+    const panelV = document.getElementById("panelVostok");
+    const panelC = document.getElementById("panelCenter");
+
+    const isV = sklad === "Vostok";
+
+    if (btnV) {
+        btnV.classList.toggle("is-active", isV);
+        btnV.setAttribute("aria-pressed", String(isV));
+    }
+    if (btnC) {
+        btnC.classList.toggle("is-active", !isV);
+        btnC.setAttribute("aria-pressed", String(!isV));
+    }
+
+    if (panelV) panelV.classList.toggle("is-active", isV);
+    if (panelC) panelC.classList.toggle("is-active", !isV);
+
+    setStatus("");
+    getIntervals(sklad);
+}
+
+setStatus("Выберите склад");
