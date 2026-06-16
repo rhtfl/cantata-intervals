@@ -460,7 +460,7 @@ a {
   justify-content: flex-start;
 }
 
-.sectora .intervalText:last-child:nth-child(odd) {
+.sectora .intervalText:last-of-type:nth-of-type(odd) {
   grid-column: 1 / -1;
 }
 
