@@ -187,6 +187,15 @@ const renderState = {
     "Center": false
 };
 
+const DELIVERY_API_CONFIG = {
+    "baseUrl": "https://www.cantata.ru/api/proxy/delivery/delivery/delivery_calc",
+    "cityName": "Москва",
+    "regionName": "Москва",
+    "language": "RU",
+    "paymentMethod": "site",
+    "total": "133"
+};
+
 let activeSklad = null;
 
 function setStatus(text) {
@@ -247,17 +256,39 @@ function createCardMarkup(sklad, index, sectorData) {
     `;
 }
 
+function buildDeliveryCalcUrl(sectorData) {
+    const params = new URLSearchParams({
+        "cityName": DELIVERY_API_CONFIG.cityName,
+        "language": DELIVERY_API_CONFIG.language,
+        "lat_for_zone": sectorData.lat,
+        "lon_for_zone": sectorData.lon,
+        "paymentMethod": DELIVERY_API_CONFIG.paymentMethod,
+        "regionName": DELIVERY_API_CONFIG.regionName,
+        "total": DELIVERY_API_CONFIG.total
+    });
+
+    return `${DELIVERY_API_CONFIG.baseUrl}?${params.toString()}`;
+}
+
 function fetchData(url, sklad, index, sectorData) {
     fetch(url, {
+        "method": "GET",
+        "mode": "cors",
         "headers": {
-            "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0eXBlIjoiY29tcGFuaWVzIiwic2VjcmV0IjoiMDViMDMxNGU4OWZjMjk5MTEwOTEzYmYxM2ExYWJiZjhhYmMwMjU2NCIsImlhdCI6MTYwNzAwMDM1MX0.E7pELaHqlRTppS3q1iQoZoj14qOtGSXXlNtl1HbhnFc"
+            "accept": "application/json, text/plain, */*"
         }
     })
         .then(async (response) => {
             if (!response.ok) {
                 let bodyText = "";
                 try {
-                    bodyText = await response.text();
+                    const contentType = response.headers.get("content-type") || "";
+                    if (contentType.includes("application/json")) {
+                        const errorJson = await response.json();
+                        bodyText = errorJson?.message || JSON.stringify(errorJson);
+                    } else {
+                        bodyText = await response.text();
+                    }
                 } catch (_) {
                     bodyText = "";
                 }
@@ -491,7 +522,7 @@ function getIntervals(sklad) {
 
     for (let i = 0; i < sectors.length; i++) {
         const sector = sectors[i];
-        const link = `https://delivery.cantata.ru/api/delivery/delivery_calc?language=RU&lat_for_zone=${sector.lat}&lon_for_zone=${sector.lon}`;
+        const link = buildDeliveryCalcUrl(sector);
 
         resultBlock.insertAdjacentHTML("beforeend", createCardMarkup(sklad, i, sector));
         fetchData(link, sklad, i, sector);
